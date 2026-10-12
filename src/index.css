@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #030014;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Futuristic Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #7000ff, #00d4ff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8a2be2, #00ffff);
+}
+
+@utility glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@utility glass-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@utility neon-text {
+  text-shadow: 0 0 10px rgba(112, 0, 255, 0.5), 0 0 20px rgba(112, 0, 255, 0.3);
+}
+
+@utility neon-border {
+  box-shadow: 0 0 15px rgba(112, 0, 255, 0.4);
+  border: 1px solid rgba(112, 0, 255, 0.5);
+}
+
+/* Particle Background */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #0a0a2e 0%, #030014 100%);
+}
+
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(112, 0, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 0, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg) translateY(-100px);
+  mask-image: linear-gradient(to bottom, transparent, black);
+}
+
+/* Orb Animation */
+.orb {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 30% 30%, #7000ff, #00d4ff, #ff00d4);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: float 8s ease-in-out infinite;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@utility gemini-shimmer {
+  background: linear-gradient(90deg, rgba(112, 0, 255, 0.08) 25%, rgba(0, 212, 255, 0.25) 50%, rgba(112, 0, 255, 0.08) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite ease-in-out;
+}
+
+/* Markdown Styles */
+.prose {
+  color: #e2e8f0;
+}
+.prose code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+.prose pre {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
